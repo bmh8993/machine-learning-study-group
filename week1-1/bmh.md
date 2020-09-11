@@ -39,7 +39,7 @@
 
 `상황 1` Housing pricie prediction
 
-![1%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%2057171c82178b4f3ab0656443a68633ff/_2020-09-06_19.29.49.png](1%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%2057171c82178b4f3ab0656443a68633ff/_2020-09-06_19.29.49.png)
+<img width="579" alt="Housing pricie prediction" src="https://user-images.githubusercontent.com/45564139/92838819-37294500-f41a-11ea-8afd-c278026f47ca.png">
 
 - 집과 관련된 데이터가 있음
 - 750평의 집을 팔려고 할 때 가격은?
@@ -58,11 +58,11 @@
 
 `상황 2` Breast cance
 
-![1%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%2057171c82178b4f3ab0656443a68633ff/_2020-09-06_21.28.50.png](1%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%2057171c82178b4f3ab0656443a68633ff/_2020-09-06_21.28.50.png)
+<img width="579" alt="Breast cancer" src="https://user-images.githubusercontent.com/45564139/92839050-7eafd100-f41a-11ea-8675-c352d31eeb99.png">
 
 - 종양의 사이즈에 따라 유방암인지 판단
 
-![1%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%2057171c82178b4f3ab0656443a68633ff/_2020-09-06_21.39.51.png](1%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%2057171c82178b4f3ab0656443a68633ff/_2020-09-06_21.39.51.png)
+<img width="309" alt="Breast cance 2 feature" src="https://user-images.githubusercontent.com/45564139/92839074-84a5b200-f41a-11ea-953b-5f7006713930.png">
 
 ### 분류 문제(classification problem)
 
@@ -81,7 +81,7 @@
 
 ### 비지도학습(Unsupervised Learning)
 
-![1%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%2057171c82178b4f3ab0656443a68633ff/_2020-09-06_23.56.39.png](1%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%2057171c82178b4f3ab0656443a68633ff/_2020-09-06_23.56.39.png)
+<img width="377" alt="Unsupervised Learning" src="https://user-images.githubusercontent.com/45564139/92839089-88d1cf80-f41a-11ea-9411-7d5907d2bf44.png">
 
 - 데이터가 주어지면, 어떤 레이블이 없을 수도 있고, 있을 수도 있다
 - 그래서 무엇을 할지, 또 각 데이터가 무엇인지 알 수 없다.
