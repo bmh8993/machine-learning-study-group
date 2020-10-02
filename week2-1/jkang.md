@@ -1,3 +1,5 @@
+# Multivariate Linear Regression
+
 ### Multiple Features
 
 - 학습할 때 고려할 변수가 여러개임.
@@ -34,3 +36,15 @@
 - best fit line이 linear가 아닐 경우를 뜻하는듯
   - 일반적으로 polynomial이면 억지로 끼워맞춘 느낌이 있는데 머신러닝은 다른가봄
   - polynomial을 사용하려면 scaling range가 매우 중요함. 제곱, 세제곱을 더할경우 range가 점점 더 커지기 때문임. 0 ~ 1,000,000 사이의 값은 더욱 오래걸림
+
+### Normal Equation
+
+- Gradient Descent 이외에 J의 최소값을 구하는 다른 방법
+
+  - /theta<sub>j</sub>에 대해 미분하여 그 값을 0으로 만드는 걸 찾음
+  - Gradient Descent에서 값을 변경하면서 global minimum을 찾는 것도 결국 빗변의 기울이가 0인 지점을 찾는거니까 같은맥락임
+  - 식이 하나라서 iteration할 필요 없이 값을 찾을 수 있다는 장점이 있음
+
+- 범위 설정을 하지 않아도 되기 때문에 scaling도 할 필요가 없고, learning rate를 설정하지 않아도 된다는 장점이 있음
+  - 근데 data set이 많을 경우 오래 걸림
+  - X<sup>T</sup>X의 inverse를 구할 수 없으면 normal equation으로 해결할 수 없음
