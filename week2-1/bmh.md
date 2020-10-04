@@ -6,27 +6,17 @@ m = traning 데이터 개수
 
 n = feature 개수
 
-$x^{(i)}$ = 데이터 하나에 입력되는 feature i
+x<sup>(i)</sup> = 데이터 하나에 입력되는 feature i
 
-$x_j^{(i)}$ = feature i 안에서 j 번째
+x<sub>j</sub><sup>(i)</sup> = feature i 안에서 j 번째
 
 - feature가 많은 경우 다음과 같이 표현
 
-$h_θ(x) = θ_0 + θ_1x_1 + θ_2x_2 + θ_3x_3 + θ_4x_4$
+h<sub>θ(x)</sub> = θ<sub>0</sub> + θ<sub>1</sub>x<sub>1</sub> + θ<sub>2</sub>x<sub>2</sub> + ... + θ<sub>n</sub>x<sub>n</sub>
 
-$h_θ(x) = θ_0 + θ_1x_1 + θ_2x_2 + ... + θ_nx_n$
+여기서 x<sub>0</sub>  = 1이라고 했을 때
 
-여기서 $x_0$  = 1이라고 했을 때
-
-⇒ $h_θ(x) = θ_0x_0 + θ_1x_1 + θ_2x_2 + ... + θ_nx_n$ 
-
-⇒ $x = \begin{pmatrix} x_0 \\ x_1 \\ x_2\\ ...\\x_n \end{pmatrix}$$R^{n+1}$(0부터 시작 n+1개)
-
-⇒ $θ = \begin{pmatrix} θ_0 \\ θ_1 \\ θ_2\\ ...\\θ_n \end{pmatrix}$$R^{n+1}$(0부터 시작 n+1개) n+1 dimensioned vector
-
-⇒ $h_θ(x) = θ^Tx$
-
- $\begin{pmatrix} θ_0 \ θ_1 \ θ_2\ ... \ θ_n \end{pmatrix} \begin{pmatrix} x_0 \\ x_1\\ x_2 \\ ... \ x_n \end{pmatrix}$
+⇒ h<sub>θ</sub>(x) = θ<sup>T</sup>X
 
 ---
 
@@ -44,19 +34,19 @@ $h_θ(x) = θ_0 + θ_1x_1 + θ_2x_2 + ... + θ_nx_n$
 
 feature scaling을 하기 이전에는 수없이 많은 경로를 통해 최소 값을 찾을 수 있음($J(θ)$의 그래프가 얇고 긴 타원형의 그래프이기 때문에) feature scaling을 하게 되면 빠르게 최소값을 찾아갈 수 있음($J(θ)$의 그래프가 전보다 원에 가까운 타원의 그래프 이기 때문에)이다
 
-$x_i$를 조절해야하는데 -1, 1과 가까운 수면 좋다. 100처럼 과하지 않게 크거나 0.0001처럼 과하게 작지 않으면 된다.(사람마다 규칙은 다름 응교수님은 -3~3까지 ok)
+x<sub>i</sub>를 조절해야하는데 -1, 1과 가까운 수면 좋다. 100처럼 과하지 않게 크거나 0.0001처럼 과하게 작지 않으면 된다.(사람마다 규칙은 다름 응교수님은 -3~3까지 ok)
 
 ## 2. mean normalization
 
 - feature scaling 이후에 mean normalization이라는 것을 할 수 있다.
 
-평균적으로 집의 크기($x_1$)가 1000이면
+평균적으로 집의 크기가 1000이면
 
-$x_1 = \frac{size-1000}{2000}$→ $-0.5≤x_1≤0.5$
+x<sub>1</sub> = size-1000/2000→ $-0.5≤x_1≤0.5$
 
 평균적으로 방의 개수($x_2)$가  2개 이면
 
-$x_2 = \frac{bedrooms-2}{5}$→$-0.5≤x_2≤0.5$
+x<sub>2</sub> = bedrooms-2/5→-0.5≤x_2≤0.5$
 
 (x - 평균값) / (max - min) 또는
 
@@ -118,13 +108,13 @@ feature scaling은 너무 정확할 필요가 없다
 예를 들어서 집의 가격을 판단할 때 집의 가로 길이, 세로 길이가 중요한 요소라고 가정하자
 
 이때
-$x_1$ = frontage(가로길이)
+x<sub>1</sub> = frontage(가로길이)
 
-$x_2$ = depth(세로길이)
+x<sub>2</sub> = depth(세로길이)
 
 이렇게 하면 feature의 개수가 2개가 된다. 하지만 새로운 방식으로 이해하면
 
-$x_1$= 집의 크기(가로 * 세로)
+x<sub>1</sub>= 집의 크기(가로 * 세로)
 
 가 되기 때문에 가장 기본적인 가설의 형식(1차 함수)을 만들 수 있다.
 
@@ -142,7 +132,7 @@ multivariant linear regression의 구조를 이용하여 알고리즘을 수정�
 - 지금까지는 gradient descent를 선형회귀에 사용했고 J(θ)를 최소화 하기 위한 것으로 gradient descent를 여러 번 반복하고 나면, 최소값으로 수렴하였다.
 - 하지만 Normal Equation는 θ를 분석적으로 구하는 방법, 한 번의 실행으로 최적의 값을 구함
 
-$\theta = (X^TX)^{-1}X^Ty$
+\theta = (X<sup>T</sup>X)<sup>-1</sup>X<sup>T</sup>y
 
 ## Gradient Descent와 Normal Equation 중에 결정하기
 
@@ -166,10 +156,10 @@ Normal Equation
 
 단점:
 
-1. $(X^TX)^{-1}$을 찾아야한다. n이 크면 클수록 힘들다
-    - feature의 개수가 n 이라면 X는 m*n
-    $X^TX$의 사이즈는 n*n이 될 것이다
-    - 행렬의 역행렬을 구하는데 걸리는 시간은 $O(n^3)$이다
+1. (X<sup>T</sup>X)<sup>-1</sup>을 찾아야한다. n이 크면 클수록 힘들다
+    - feature의 개수가 n 이라면 X는 m * n
+    (X<sup>T</sup>X)의 사이즈는 n * n이 될 것이다
+    - 행렬의 역행렬을 구하는데 걸리는 시간은 O(n<sup>3</sup>)이다
 
 즉, n이 작으면 gradient Descent, 크면 Normal Equation
 크다 작다의 기준은 10^6 기준
@@ -180,18 +170,18 @@ Normal Equation
 
 Norrmal Equation이 적용이 안되는 경우
 
-$(X^TX)^{-1}$이 없는 경우
+(X<sup>T</sup>X)<sup>-1</sup>이 없는 경우
 
 - 역행렬을 구할 수 있는 행렬은 한정되어 있음(비가역행렬(non-invertible matrix), 특이행렬(singular matrix), degenerate matrix 라고 부름)
-- 하지만  $(X^TX)^{-1}$이 없는 경우는 거의 없음
+- 하지만  (X<sup>T</sup>X)<sup>-1</sup>이 없는 경우는 거의 없음
 - octave에서 역행렬을 구하는데 pinv(pseudo-inverse)를 사용하면 강제로 값을 구할 수 있다
 
 ### 역행렬이 없는 원인
 
 1. 문제에 불필요한 feature를 가지고 있는 경우
-예시로 $x_1 = size$ in feet^2, $x^2=size$ in m^2
-여기서 $x_1$과 $x_2$의 관계를 만들 수 있는데
-    - $x_1=(3.28)^2*x_2$
+예시로 x<sub>1</sub> = size in feet<sup>2</sup>, x<sup>2</sup>=size in m<sup>2</sup>
+여기서 x<sub>1</sub>과 x<sub>2</sub>의 관계를 만들 수 있는데
+    - x<sub>1</sub>=(3.28)<sup>2</sup> * x<sub>2</sub>
 
     이처럼 두 feature가 서로 관련이 있고 이와 같은 선형방정식이라면 역행렬이 없다는게 즉명됨
 
