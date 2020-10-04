@@ -62,3 +62,36 @@ Y값을 예측하는 여러개의 feature 혹은 변수를 표현하는 말
     - h<sub>Θ</sub>(x) = Θ<sub>0</sub>+Θ<sub>1</sub>(size)+Θ<sub>2</sub>√(size)
       - 갈수록 평편해지지만 하강하진 않음
   - 자동으로 어떤 feature를 선택할지 골라주는 알고리즘 존재
+
+# Computing Parameters Analytically
+- Normal equation: method to solve for Θ analytically
+- J 최소화 :  J 편미분, 각각 모든 파라미터 Θ_j에 따라 차례대로 미분하여 모두 0가 되게하여 Θ값을 구함
+- design matrix
+- (X^TX)^-1X^Ty
+- pinv(X'\*X)\*X'*y
+  - pinv : 행렬의 역행렬을 계산하는 함수
+
+## gradient descent vs normal equation
+- 가정 : m training examples, n features
+- gradient descent
+  - 알파 정해야함 (최적의 알파)
+  - 많은 반복필요 (느려질수있음)
+  - n이 매우 많을때 효과적임
+- normal equation
+  - 알파 선택할 필요없음 (편리, 구현간단)
+    - feature scaling 할 필요없음
+  - 반복필요 없음
+  - (X'X)의 역행렬을 계산해야함
+  - n이 매우 많으면 느려짐
+    - 일반적으로 n이 1만을 넘어서면 gradient descent로 하는게 나음(정확한 시점은 정해져있지않음)
+
+## Normal equation Noninvertibility
+- pinv vs int
+  - pinv : 역행렬이 없어도 theta값을 정확히 계산
+- 행렬 X'X 역행렬이 없는경우나 특이행렬인 경우 (희귀한 경우)
+  1. 문제에서 불필요한 features가 존재할경우 (추천)
+      - 붎필요한 행렬이 feature가 있으면 지워야할 것들은 지우는것이 좋음
+  2. 너무 많은 feature가 존재할경우 (m이 n보다 작거나 같을 경우)
+     - ex) m=10, n=100이면 세타가 101차원
+       - 10개의 training example로 101개의 파라미터를 표현하려 하는 것
+       - 해결 방안 : feature몇개를 제거하거나 regularization 사용(후반에 배울 주제)
