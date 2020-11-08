@@ -1,6 +1,8 @@
 # Neural Networks
 
 ## Motivations
+- 매우 많은 features들이 있을 때 머신러닝 시 좋은 결과를 내기 위한 해결책
+
 - Non-linear Hypotheses
   - 일반적으로 기계분류에서 n은 대부분 매우 큼
   - n이 클떄 비선형적인 분류를 위해 요소를 추가하는 방식은 좋지 않음
@@ -15,8 +17,9 @@
 
 ## Neural Networks
 - Model Representation
+  - x_0~x3 : input wire, 노란색 원의 뉴런, output wire
   - 일반적으로 x_1, x_2, x_3 노드 추가, x_0는 필요한 상황에 추가적으로 표현
-  - x_0 = bias unit/neuron(가독성을 높이기 위해 생략하기도함) 출력값 항상 1
+  - x_0 = (바이어스 유닛)bias unit/neuron(가독성을 높이기 위해 생략하기도함) 출력값 항상 1
   - activation function
     - g(z) = 1/1+e^-z
   - raw한 features(x1,x2,x3) 를 통해 그대로 학습하는 Logistic Regression 과 달리 Neural Network는 고유한 features 들인 a_1, a_2, a_3를 학습하여 h_theata(x)를 만든다.
